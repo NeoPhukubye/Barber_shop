@@ -1,5 +1,10 @@
 window.APP_CONFIG = {
-    apiUrl: "https://iron-shears-api.onrender.com",
+    // API URL will be set based on environment
+    // For local development: http://localhost:5000
+    // For production (Render.com): https://iron-shears-api.onrender.com
+    apiUrl: window.location.hostname === 'localhost' 
+        ? 'http://localhost:5000' 
+        : 'https://iron-shears-api.onrender.com',
     brand: {
         name: "The Iron Shears",
         tag: "Est. 2014",
