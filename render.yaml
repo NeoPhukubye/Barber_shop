@@ -1,0 +1,21 @@
+# Render.com Blueprint for The Iron Shears Backend API
+# This file tells Render how to build and deploy the Flask backend.
+
+databases:
+  - name: iron-shears-db
+    plan: free
+    postgresVersion: 14
+
+services:
+  - type: web
+    name: iron-shears-api
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT backend.app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: PORT
+        value: 10000
