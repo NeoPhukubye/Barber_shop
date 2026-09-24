@@ -1,0 +1,13 @@
+/* Iron Shears - Hero */
+.hero { position: relative; height: 100vh; min-height: 640px; display: flex; align-items: center; background: linear-gradient(135deg, rgba(26,26,26,0.85), rgba(90,58,31,0.55)), var(--charcoal); overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0 0L100 100M100 0L0 100" stroke="%23242424" stroke-width="1"/></svg>') repeat; opacity: 0.4; }
+.hero-content { position: relative; z-index: 2; max-width: 720px; }
+.hero .badge { margin-bottom: 22px; }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.05; color: var(--cream); margin-bottom: 22px; }
+.hero h1 em { color: var(--amber); font-style: italic; }
+.hero p { font-size: 1.12rem; color: #c8c2b8; max-width: 560px; margin-bottom: 36px; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero-stats { display: flex; gap: 40px; margin-top: 56px; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--amber); }
+.stat-label { font-size: 0.8rem; color: #a8a29a; letter-spacing: 1px; text-transform: uppercase; }
+@media (max-width: 760px) { .hero-stats { gap: 24px; } .stat-num { font-size: 1.7rem; } }
