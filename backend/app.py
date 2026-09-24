@@ -1,12 +1,32 @@
 from datetime import datetime, timedelta
 from urllib.parse import quote
-from io import StringIO
+from io import BytesIO
 
 from flask import Flask, request, jsonify, send_file, Response
 from flask_cors import CORS
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 CORS(app)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///app.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+db = SQLAlchemy(app)
+
+
+class Booking(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    barber_id = db.Column(db.String, nullable=False)
+    date = db.Column(db.Date, nullable=False)
+    hour = db.Column(db.Integer, nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    __table_args__ = (
+        db.UniqueConstraint("barber_id", "date", "hour", name="unique_booking"),
+    )
+
+
+with app.app_context():
+    db.create_all()
 
 BRAND = {
     "name": "The Iron Shears",
@@ -36,9 +56,7 @@ BARBERS = [
     {"id": "any", "name": "Any Available Barber", "bio": "Our next available professional will give you the same meticulous attention to detail.", "image": "barber-any.jpg"},
 ]
 
-# In-memory store of booked slots per barber per day.
-# Structure: {barber_id: {date_str: [start_hour, ...]}}
-BOOKINGS = {}
+# Bookings are now persisted in SQLite via the Booking model above.
 
 
 def _parse_dt(date_str, time_str):
@@ -120,7 +138,11 @@ def api_availability():
     service = next((s for s in SERVICES if s["id"] == service_id), None)
     if not service:
         service = SERVICES[0]
-    booked = set(BOOKINGS.get(barber_id, {}).get(date_str, []))
+    booked = set(
+        b.hour for b in Booking.query.filter_by(
+            barber_id=barber_id, date=datetime.strptime(date_str, "%Y-%m-%d").date()
+        ).all()
+    )
     slots = []
     for hour in range(9, 20):
         if hour in booked:
@@ -169,12 +191,14 @@ def api_book():
     # Check for double booking.
     day = start.strftime("%Y-%m-%d")
     hour = start.hour
-    booked_hours = BOOKINGS.get(barber_id, {}).get(day, [])
-    if hour in booked_hours:
+    existing = Booking.query.filter_by(barber_id=barber_id, date=day, hour=hour).first()
+    if existing:
         return jsonify({"error": "time slot no longer available"}), 409
 
     # Record booking.
-    BOOKINGS.setdefault(barber_id, {}).setdefault(day, []).append(hour)
+    booking = Booking(barber_id=barber_id, date=start.date(), hour=hour)
+    db.session.add(booking)
+    db.session.commit()
 
     details = (
         f"{BRAND['name']} - {service['name']}\n"
@@ -227,7 +251,7 @@ def api_ics_download():
     details = f"{BRAND['name']} - {service['name']}\nCustomer: {data.get('name')}\nEmail: {data.get('email')}"
     title = f"{BRAND['name']} - {service['name']}"
     ics = _generate_ics(start, end, title, details, BRAND["address"])
-    buf = StringIO(ics)
+    buf = BytesIO(ics.encode("utf-8"))
     buf.seek(0)
     return send_file(
         buf,
