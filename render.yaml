@@ -1,10 +1,6 @@
 # Render.com Blueprint for The Iron Shears Backend API
 # This file tells Render how to build and deploy the Flask backend.
-
-databases:
-  - name: iron-shears-db
-    plan: free
-    postgresVersion: 14
+# Uses SQLite (no external database required).
 
 services:
   - type: web
