@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - The Iron Shears</title>
+  <meta name="description" content="Contact The Iron Shears barber shop in San Francisco. Visit us at 1422 Market Street or call (415) 555-0142.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/booking-contact.css">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <div class="promo-banner">
+    <span>First visit? Get <strong>20% off</strong> your first service. Use code <strong>WELCOME20</strong> at booking.</span>
+  </div>
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="images/logo.svg" alt="The Iron Shears logo" class="brand-logo">
+        <div><div class="brand-name">The Iron Shears</div><div class="brand-tag">Est. 2014</div></div>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="booking.html" class="book-btn">Book Now</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="booking.html">Booking</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html" class="book-btn">Book Now</a>
+    </div>
+  </header>
+
+  <section class="hero hero-small">
+    <div class="container" style="padding: 100px 0 60px;">
+      <h1 style="color: var(--cream); font-size: clamp(2.2rem, 5vw, 3.2rem);">Contact Us</h1>
+      <p style="color: #c8c2b8; margin-top: 16px;">We'd love to hear from you. Visit us, call us, or send a message.</p>
+    </div>
+  </section>
+
+  <section class="section contact-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Get In Touch</h2>
+        <p>We're located in the heart of San Francisco's Market Street district. Come by for a cut or reach out with any questions.</p>
+        <div class="line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Visit Our Shop</h3>
+          <p>We're conveniently located at the corner of Market and 7th Street, with street parking and public transit nearby.</p>
+          <div class="contact-details">
+            <div class="item">
+              <div class="icon">📍</div>
+              <div><h4>Address</h4><p>1422 Market Street, Suite 200<br>San Francisco, CA 94103</p></div>
+            </div>
+            <div class="item">
+              <div class="icon">📞</div>
+              <div><h4>Phone</h4><p><a href="tel:+14155550142">(415) 555-0142</a></p></div>
+            </div>
+            <div class="item">
+              <div class="icon">✉</div>
+              <div><h4>Email</h4><p><a href="mailto:book@theironshears.com">book@theironshears.com</a></p></div>
+            </div>
+            <div class="item">
+              <div class="icon">⏰</div>
+              <div><h4>Hours</h4>
+                <table class="hours-table">
+                  <tr><td>Mon-Fri</td><td>9am - 8pm</td></tr>
+                  <tr><td>Saturday</td><td>9am - 6pm</td></tr>
+                  <tr><td>Sunday</td><td>11am - 4pm</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="map">
+            <p style="text-align: center; padding: 20px;"><strong>The Iron Shears</strong><br>1422 Market Street, Suite 200<br>San Francisco, CA 94103<br>(415) 555-0142</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.088669569564!2d-122.41700828468167!3d37.77502997975723!2m3!1f0!2f0!3f0!3m2!1i1280!2j680!4f13.1!3m3!1m2!1s0x80858064a1e2c9e3%3A0x8d7e6e1f7f0c4d9e!5e0!3m2!1sen!2sus!4v1!6m2!1sen!2sus"
+              width="100%" height="280" style="border-radius: 8px; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(415) 555-0000">
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a topic</option>
+                <option value="booking">Booking Inquiry</option>
+                <option value="services">Service Question</option>
+                <option value="products">Product Inquiry</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="How can we help you?" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+            <div id="formResult" style="display: none; text-align: center; margin-top: 20px; padding: 16px; border-radius: 8px; color: var(--charcoal); background: #d4edda;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Want to Skip the Line?</h2>
+      <p>Book your appointment online and we'll see you soon.</p>
+      <a href="booking.html" class="btn">Book Online</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <img src="images/logo.svg" alt="The Iron Shears" class="brand-logo">
+            <div><div class="brand-name">The Iron Shears</div><div class="brand-tag">Est. 2014</div></div>
+          </a>
+          <p>Where precision meets tradition. A classic barber shop offering timeless cuts and modern style in the heart of San Francisco.</p>
+          <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6.01 4.9.07 1.2.06 1.9.27 2.4.45.6.2 1 .45 1.4 1 .4.6.7 1 .9 1.6.1.4.2.8.3 1.2.07 1.3.08 1.7.08 5 0 3.3-.01 3.7-.08 5-.06 1.2-.26 1.9-.45 2.4-.2.6-.4 1-.9 1.4-.6.4-1 .7-1.5.9-.4.1-.9.3-1.3.4-1.4.1-1.9.1-5.4.1-3.5 0-4-.1-5.4-.2-1.3-.06-1.9-.26-2.4-.45-.6-.2-1-.46-1.4-1-.4-.6-.7-1-.8-1.6-.1-.4-.2-.8-.2-1.2 0-.4.1-.8.2-1.2.06 1.4.1 1.8.1 5.1 0 3.3-.01 3.7-.1 5-1.3-.1-1.9-.1-5.3-.1-3.4 0-4 0-5.3.1-1.3.06-1.9.27-2.4.46-.6.2-1 .46-1.4 1-.4.6-.7 1-.8 1.6-.1.4-.2.8-.2 1.2 0 .4.1.8.2 1.2.06 1.4.1 1.8.1 5.1 0 3.3-.01 3.7-.1 5-.06 1.2-.26 1.9-.45 2.4-.2.6-.4 1-.9 1.4-.6.4-1 .7-1.5.9-.4.1-.9.3-1.3.4-1.3.1-1.9.1-5 .1-3.2 0-3.7-.01-5-.07-1.2-.2-1.9-.26-2.4-.45-.6-.2-1-.46-1.4-1-.4-.6-.7-1-.9-1.6-.1-.4-.2-.8-.3-1.2-.07-1.3-.08-1.7-.08-5 0-3.2-.02-3.7-.1-5-.06-1.2-.26-1.9-.45-2.4-.2-.6-.4-1-.9-1.4-.6-.4-1-.7-1.5-.9-.4-.1-.8-.2-1.3-.3-1.3-.06-1.9-.27-2.4-.46-.6-.2-1-.46-1.4-1-.4-.6-.7-1-.8-1.6C.56 5.21.53 4.79.5 4.76c-.06-1.3-.1-1.7-.1-5 0-3.4.03-3.8.1-5.1.06-1.1.25-1.8.44-2.3.2-.4.4-.9.7-1.3.3-.5.5-.9.5-1.3v-.01c.2-.4.4-.8.8-1.2.2-.4 1.1-1.3 2.3-2.3.2-.2.5-.5 1-1 .5-.5 1.1-1 1.4-1.2.3-.2.7-.4 1.1-.6 1.3-.7 1.3-.7 5.2-.7h3.2V2.2h-5.2c-1.4 0-3 0-4.4.1-1.2.06-1.8.26-2.3.44-.6.2-1 .46-1.4 1-.4.6-.7 1-.8 1.6-.1.4-.2.9-.2 1.3v-.1c0 .3-.1.7-.2 1.1-.1.3-.1.7 0 1 .1.3.4.7.5.9.1.2.3.3.5.3.4 0 .7.1 1 .3.2.2.5.6.6 1 .1.3.1.7.1 1z"/></svg></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35C.596 0 .001.593.001 1.326v21.345C.001 23.405.596 24 1.326 24h11.494v-9.294H9.691V11.01h3.129V8.413c0-3.1 1.894-4.788 4.658-4.788 1.34 0 2.48.195 2.48.195v2.76h-1.38c-1.374 0-1.833.916-1.833 1.75v2.322h3.18l-.41 3.692h-2.72V24h5.063c.731 0 1.325-.596 1.325-1.326V1.326C24 .593 23.405 0 22.675 0z"/></svg></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 6 2.74 6 6v12c0 3.26 2.74 6 6 6s6-2.74 6-6V8h-1.5v10c0 1.93-1.57 3.5-3.5 3.5S8.5 19.93 8.5 18V6c0-.55.45-1 1-1 .55 0 1 .45 1 1v10c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V8c0-2.76-2.24-5-5-5H12c-2.21 0-4 1.79-4 4v12c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V6c0-.55.45-1 1-1 .55 0 1 .45 1 1v10c0 3.26-2.74 6-6 6-3.26 0-6-2.74-6-6V6C0 2.74 2.74 0 6 0h6zm3.5 0v1.5c0 .88.74 1.58 1.58 1.58C21.26 5.58 22 4.84 22 4h2c0 .55-.45 1-1 1-1.65 0-3-1.35-3-3V6c0-.55.45-1 1-1 .55 0 1 .45 1 1v1.5c0 .28-.22.5-.5.5z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="booking.html">Booking</a></li><li><a href="contact.html">Contact</a></li></ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul><li><a href="services.html#haircuts">Haircuts</a></li><li><a href="services.html#grooming">Beard &amp; Grooming</a></li><li><a href="services.html#packages">Packages</a></li><li><a href="services.html#kids">Kids Cuts</a></li></ul>
+        </div>
+        <div>
+          <div class="contact-details">
+            <div class="item"><div class="icon">📍</div><div><h4>Address</h4><p>1422 Market Street, Suite 200, San Francisco, CA 94103</p></div></div>
+            <div class="item"><div class="icon">📞</div><div><h4>Phone</h4><p><a href="tel:+14155550142">(415) 555-0142</a></p></div></div>
+            <div class="item"><div class="icon">✉</div><div><h4>Email</h4><p><a href="mailto:book@theironshears.com">book@theironshears.com</a></p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-hours">
+        <h4 style="color: var(--amber); margin-bottom: 12px; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Opening Hours</h4>
+        <table class="hours-table">
+          <tr><td>Monday - Friday</td><td>9am - 8pm</td></tr>
+          <tr><td>Saturday</td><td>9am - 6pm</td></tr>
+          <tr><td>Sunday</td><td>11am - 4pm</td></tr>
+        </table>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 The Iron Shears. All rights reserved.</span>
+        <span><a href="terms.html">Terms &amp; Conditions</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="booking.html">Book Now</a></span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      var r = document.getElementById("formResult");
+      r.style.display = "block";
+      r.textContent = "Thank you! Your message has been sent. We'll get back to you within 24 hours.";
+      r.style.background = "#d4edda";
+      r.style.color = "#155724";
+    });
+  </script>
+</body>
+</html>
