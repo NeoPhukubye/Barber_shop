@@ -1,0 +1,23 @@
+/* Iron Shears - Services */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.service-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid rgba(0,0,0,0.05); }
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+.service-img { height: 180px; background: var(--charcoal); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+.service-body { padding: 24px; }
+.service-body h3 { font-size: 1.35rem; margin-bottom: 8px; }
+.service-body .price { color: var(--amber); font-weight: 700; font-size: 1.15rem; margin-bottom: 10px; display: block; }
+.service-body p { color: var(--muted); font-size: 0.9rem; margin-bottom: 16px; }
+.service-body .book-link { color: var(--amber); text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+.service-body .book-link:hover { text-decoration: underline; }
+/* Packages */
+.packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.package-card { background: var(--charcoal); color: var(--cream); border-radius: 8px; padding: 32px 28px; border: 1px solid rgba(212,160,74,0.2); transition: transform 0.3s; }
+.package-card.featured { border-color: var(--amber); box-shadow: 0 0 0 1px var(--amber); transform: scale(1.02); }
+.package-card.featured .package-badge { display: inline-block; }
+.package-badge { display: none; background: var(--amber); color: var(--white); font-size: 0.7rem; letter-spacing: 1px; padding: 4px 10px; border-radius: 10px; text-transform: uppercase; margin-bottom: 12px; }
+.package-card h3 { color: var(--cream); font-size: 1.4rem; margin-bottom: 10px; }
+.package-card .price { color: var(--amber); font-size: 1.8rem; font-weight: 700; display: block; margin-bottom: 16px; }
+.package-card ul { list-style: none; margin-bottom: 24px; }
+.package-card li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.9rem; display: flex; align-items: center; gap: 10px; }
+.package-card li::before { content: '✓'; color: var(--amber); font-weight: 700; }
+@media (max-width: 900px) { .services-grid, .packages-grid { grid-template-columns: 1fr; } }
